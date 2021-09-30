@@ -16,7 +16,6 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.List;
 
-// class version 11
 @SpringBootApplication
 public class SpringBootSimpleApplication implements CommandLineRunner, ApplicationRunner {
     private static final Logger log = LoggerFactory.getLogger(
@@ -49,63 +48,3 @@ public class SpringBootSimpleApplication implements CommandLineRunner, Applicati
             log.info(arg);
     }
 }
-
-
-//public class SpringBootSimpleApplication {
-//
-//    public static void main(String[] args) {
-//
-        // class version 4
-//        SpringApplication app = new SpringApplication(SpringBootSimpleApplication.class);
-//        // 더 많은 기능은 여기에 추가
-//        app.setBanner(new Banner() {
-//            @Override
-//            public void printBanner(Environment environment, Class<?> sourceClass, PrintStream out) {
-//                out.print("\n\n\t나만의 멋진 배너랍니다!\n\n".toUpperCase());
-//            }
-//        });
-//
-//        app.run(args);
-
-//        new SpringApplicationBuilder()
-//                .bannerMode(Banner.Mode.OFF)
-//                .sources(SpringBootSimpleApplication.class)
-//                .run(args);
-
-        // class version 5
-//        Logger log = LoggerFactory.getLogger(SpringBootSimpleApplication.class);
-//        new SpringApplicationBuilder(SpringBootSimpleApplication.class)
-//                .listeners(new ApplicationListener<ApplicationEvent>() {
-//
-//                    @Override
-//                    public void onApplicationEvent(ApplicationEvent event) {
-//                        log.info("### > " + event.getClass().getCanonicalName());
-//                    }
-//                })
-//                .run(args);
-
-        // class version 10
-//        SpringApplication.run(SpringBootSimpleApplication.class, args);
-//    }
-
-    // class version 10
-//    @Component
-//    class MyCompnent {
-//
-//        private final Logger log = LoggerFactory.getLogger(MyCompnent.class);
-//
-//        @Autowired
-//        public MyCompnent(ApplicationArguments args) {
-//            boolean enable = args.containsOption("enable");
-//            if (enable)
-//                log.info("## > enable 옵션을 주셨네요!!");
-//
-//            List<String> _args = args.getNonOptionArgs();
-//            log.info("## > 다른인자 ...");
-//            if(!_args.isEmpty())
-//                _args.forEach(file -> log.info(file));
-//        }
-//    }
-
-//}
-
