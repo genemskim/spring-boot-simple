@@ -17,7 +17,8 @@ import java.io.PrintStream;
 import java.util.List;
 
 @SpringBootApplication
-public class SpringBootSimpleApplication implements CommandLineRunner, ApplicationRunner {
+public class SpringBootSimpleApplication implements CommandLineRunner, 
+ApplicationRunner {
     private static final Logger log = LoggerFactory.getLogger(
             SpringBootSimpleApplication.class);
 
@@ -42,7 +43,7 @@ public class SpringBootSimpleApplication implements CommandLineRunner, Applicati
 
     @Override
     public void run(String... args) throws Exception {
-        log.info("## > CommnadRunner 구현체...");
+        log.info("## > CommandRunner 구현체...");
         log.info("info 빈에 엑세스:"+info);
         for(String arg:args)
             log.info(arg);
