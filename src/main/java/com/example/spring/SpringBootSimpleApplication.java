@@ -17,35 +17,29 @@ import java.io.PrintStream;
 import java.util.List;
 
 @SpringBootApplication
-public class SpringBootSimpleApplication implements CommandLineRunner, 
-ApplicationRunner {
+public class SpringBootSimpleApplication {
     private static final Logger log = LoggerFactory.getLogger(
             SpringBootSimpleApplication.class);
 
-    public static void main(String[] args) throws IOException {
-        SpringApplication.run(SpringBootSimpleApplication.class, args);
-    }
+            public static void main(String[] args) throws IOException {
+                SpringApplication.run(SpringBootSimpleApplication.class, args);
+            }
 
-    @Bean
-    String info() {
-        return "그냥 간단한 문자열 빈입니다";
-    }
+            @Bean
+            String info() {
+                return "그냥 간단한 문자열 빈입니다";
+            }
 
-    @Autowired
-    String info;
+            @Autowired
+            String info;
 
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
-        log.info("## > ApplicationRunner 구현체");
-        log.info("info 빈에 엑세스:" + info);
-        args.getNonOptionArgs().forEach(file -> log.info(file));
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-        log.info("## > CommandRunner 구현체...");
-        log.info("info 빈에 엑세스:"+info);
-        for(String arg:args)
-            log.info(arg);
-    }
+            @Bean
+            CommandLineRunner myMethod() {
+                return args -> {
+                    log.info("## > CommandLineRunner 구현체...");
+                    log.info("info 빈에 엑세스: " + info);
+                    for(String arg:args)
+                        log.info(arg);
+                };
+            }
 }
