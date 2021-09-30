@@ -18,8 +18,7 @@ import java.util.List;
 
 // class version 11
 @SpringBootApplication
-public class SpringBootSimpleApplication implements CommandLineRunner,
-        ApplicationRunner {
+public class SpringBootSimpleApplication implements CommandLineRunner, ApplicationRunner {
     private static final Logger log = LoggerFactory.getLogger(
             SpringBootSimpleApplication.class);
 
